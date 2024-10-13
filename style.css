@@ -1,65 +1,84 @@
 body {
-    background-color: #f4f4ff;
-    margin: 0;
-    padding: 0;
-    font-family: 'Oswald', sans-serif;
-  }
-  
-  nav{    
-    width: 150px;
-    float: left;
-    display: inline;
-    margin: 0;
-    padding: 0;
-    margin-right: 5px;
-  }
+  background-color: #4d81e9;
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+}
 
-  aside {
-    height: 100%;
-  }
+.sidebar {
+  position: fixed;
+  width: 12%;
+  height: 100vh;
+  background: #7797de;
+  font-size: 0.65em;
+}
 
-  nav ul {
-    list-style: none;
-    background-color: #4a4a4f;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav li {
-    font-size: 1.2em;
-    line-height: 40px;
-    height: 40px;
-    display: flex;
-    margin-left: 1%;
-  }
-   
-  nav a {
-    text-decoration: none;
-    color: #fff;
-    display: block;
-  }
-  
-  nav a:hover {
-    background-color: #fff;
-    color: #242534;
-  }
+.nav {
+  position: relative;
+  margin: 0;
+  text-align: right;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+}
 
-  .card {
-    float: left;
-    width: 15%;
-    margin-left: 15%;
-  }
+.nav ul {
+  list-style: none;
   
-  .card a {
-    text-align: center;
+  li {
+    position: relative;
+    margin: 0.2em 0;
+    
+    a {
+      line-height: 5em;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.4em;
+      color: rgba(#FFF, 0.35);
+      display: block;
+      transition: all ease-out 300ms;
+    }
+    
+    &.active a {
+      color: white;
+    }
+    
+    &:not(.active)::after {
+      opacity: 0.2;
+    }
+    
+    &:not(.active):hover a {
+      color: rgba(#FFF, 0.75);
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 0.2em;
+      background: rgb(170, 166, 166);
+      left: 0;
+      bottom: 0;
+      background-image: linear-gradient(to right, #807f83, #3a3638)
+    }
   }
-  
-  img {
-    width: 100%;
-    height: 180px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
+}
+
+.card {
+  float: left;
+  width: 15%;
+  margin-left: 15%;
+}
+
+.card a {
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: 180px;
+}
+
+h1 {
+  text-align: center;
+}
